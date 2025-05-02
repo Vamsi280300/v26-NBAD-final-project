@@ -7,7 +7,7 @@ import { ChartService } from '../../services/chart.service';
   standalone: true,
   selector: 'app-summary',
   template: `
-    <canvas baseChart [data]="chartData" [type]="chartType"></canvas>
+    <canvas baseChart [data]="chartData" [options]="chartOptions" [type]="chartType"></canvas>
     <p class="caption">
         The chart shows the steady rise in <em>U.S. electric and multi-utility capital expenditures</em> from
         <strong>2013</strong> to <strong>2024</strong>, with forecasts for <strong>2025</strong> and <strong>2026</strong>.
@@ -27,6 +27,52 @@ import { ChartService } from '../../services/chart.service';
 export class SummaryComponent {
   chartType: ChartType = 'bar';
   chartData: ChartConfiguration['data'] = { labels: [], datasets: [] };
+
+  // Add chart options with axis configuration
+  chartOptions: ChartConfiguration['options'] = {
+    responsive: true,
+    scales: {
+      x: {
+        title: {
+          display: true,
+          text: 'Years',
+          font: {
+            size: 14,
+            weight: 'bold'
+          }
+        },
+        ticks: {
+          font: {
+            weight: 'bold'
+          }
+        }
+      },
+      y: {
+        title: {
+          display: true,
+          text: 'USD Billions',
+          font: {
+            size: 14,
+            weight: 'bold'
+          }
+        },
+        ticks: {
+          callback: function(value) {
+            return '$' + value + 'B';
+          }
+        }
+      }
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function(context) {
+            return 'USD $' + context.parsed.y + ' billion';
+          }
+        }
+      }
+    }
+  };
 
   constructor(cs: ChartService) {
     cs.getSummary().subscribe({

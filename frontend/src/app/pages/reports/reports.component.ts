@@ -45,7 +45,7 @@ export class ReportsComponent {
     scales: {
       x: { title: { display: true, text: 'Years' } },
       y:   { position: 'left',  title: { display:true, text:'Percent'} },
-      y1:  { position: 'right', title: { display:true, text:'USD billions' },
+      y1:  { position: 'right', title: { display:true, text:'USD billions' },
              grid: { drawOnChartArea:false } }
     }
   };
