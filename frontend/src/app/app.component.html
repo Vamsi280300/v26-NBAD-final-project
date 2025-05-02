@@ -1,0 +1,40 @@
+<nav aria-label="Main" class="main-nav">
+
+  <span class="brand">Power Sector Evolution</span>
+
+  <a routerLink="/dashboard"
+     routerLinkActive="active"
+     [routerLinkActiveOptions]="{ exact: true }"
+     [class.active]="!auth.isLoggedIn && clickedWhileLoggedOut==='dashboard'"
+     (click)="markLink('dashboard')">
+    Dashboard
+  </a>
+
+  <a routerLink="/summary"
+     routerLinkActive="active"
+     [routerLinkActiveOptions]="{ exact: true }"
+     [class.active]="!auth.isLoggedIn && clickedWhileLoggedOut==='summary'"
+     (click)="markLink('summary')">
+    Summary
+  </a>
+
+  <a routerLink="/reports"
+     routerLinkActive="active"
+     [routerLinkActiveOptions]="{ exact: true }"
+     [class.active]="!auth.isLoggedIn && clickedWhileLoggedOut==='reports'"
+     (click)="markLink('reports')">
+    Reports
+  </a>
+
+  <span class="spacer"></span>   <!-- pushes Logout to right -->
+
+  <a *ngIf="auth.isLoggedIn && router.url !== '/login'"
+     href="#"
+     class="logout-link"
+     (click)="logout()">
+    Logout
+  </a>
+</nav>
+
+  <router-outlet></router-outlet>
+  

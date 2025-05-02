@@ -1,0 +1,50 @@
+<section style="max-width:800px;margin:2rem auto;line-height:1.6">
+    <h2>US Federal Funding Accelerates Clean-Energy Growth</h2>
+  
+    <p>
+        The U.S. power sector is undergoing a significant transformation, with projected capital needs reaching $1.4 trillion 
+        between 2025 and 2030 to support growing electricity demand. This demand is fueled by increasing electrification, the 
+        rapid expansion of AI-driven data centers, and the reshoring of manufacturing operations. Traditional funding models 
+        such as customer rate increases and debt issuance are proving less effective due to rising utility bills, elevated 
+        interest rates, and regulatory delays. In response, utilities are exploring alternative funding options including 
+        private capital, partnerships with technology companies, and federal incentives. Private investors are engaging through 
+        asset sales, platform acquisitions, and joint ventures, while tech companies are contributing by funding clean energy 
+        infrastructure and advanced nuclear solutions. To further manage costs, utilities are embracing regulatory reforms like 
+        performance-based models and enhancing operational efficiency using artificial intelligence, smart grid technologies, 
+        and non-wire alternatives. These efforts aim to lower capital requirements while improving grid reliability and 
+        sustainability. In a landscape marked by economic uncertainty and climate challenges, collaboration among utilities, 
+        regulators, investors, and technology leaders is vital to ensuring the development of a resilient, affordable, and 
+        future-ready energy grid.
+      
+      
+        
+    </p>
+    <p>
+      Source: <a href="https://www2.deloitte.com/us/en/insights/industry/power-and-utilities/funding-growth-in-us-power-sector.html" target="_blank">
+        Funding Growth in the U.S. Power Sector
+      </a>
+    </p>
+  
+    <h3>Technical Overview</h3>
+  
+    <ul>
+      <li>This project is built as a full-stack Single Page Application (SPA) using the <em>MEAN</em> stack: <em>MongoDB</em> for 
+      the database, <em>Express</em> and <em>Node.js</em> for the backend, and <em>Angular</em> for the frontend. </li>
+      <li>The backend runs independently on port <em>3000</em> and is responsible for handling user authentication using <em>JSON Web Tokens 
+      (JWT)</em>, serving protected API endpoints, and delivering chart data asynchronously via <em>HTTP GET</em> requests. </li>
+      <li>The frontend is hosted on port <em>80</em> using <em>NGINX</em>, and it communicates with the backend via <em>RESTful 
+      HTTP</em> calls.</li>
+      <li>The application starts with a secure login page using hardcoded credentials (<em>vamsi/vamsi</em>) for demonstration, 
+      and redirects authenticated users to the dashboard. Navigation across Dashboard, Summary, and Reports is protected 
+      using route guards and <em>JWT</em> verification.</li>
+      <li>The dashboard features a responsive layout with Dynamic charts are integrated using a <em>charting library</em> and 
+      are populated with data fetched securely from the backend.</li>
+      <li>The frontend follows <em>ADA/WCAG</em> accessibility principles for usability and compliance. All server components are 
+      deployed on a single instance to ensure streamlined hosting and maintenance.</li>
+      <li>The entire codebase is version-controlled and organized in a single <em>GitHub</em> repository, excluding unnecessary 
+      files via <em>.gitignore</em>. </li>
+      <li>This setup ensures a decoupled, scalable, and secure architecture suitable for modern web development practices.</li>
+        </ul>
+    
+  </section>
+  
